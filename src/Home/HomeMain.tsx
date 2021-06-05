@@ -1,6 +1,6 @@
 import React from "react";
 import HomeHeader from "./HomeHeader";
-// import Nav from "./Nav";
+import HomeTab from './HomeTab'
 import HomeTitles from "./HomeTitles";
 import { StyleProvider } from "../Context/StyleHomeContext";
 import styled from "styled-components";
@@ -18,7 +18,7 @@ const Home: React.FC = () => {
         <Section>
           <HomeHeader />
           <HomeTitles />
-          {/* <Nav /> */}
+          <HomeTab />
         </Section>
       </StyleProvider>
     </motion.div>

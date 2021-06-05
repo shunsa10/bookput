@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 // import img4 from './assets/img/img4.jpg'
 import { StyleHomeContext } from "../Context/StyleHomeContext";
 import { useContext } from "react";
-
 import { sp, tab } from "../media";
 
 type ToggleProps = {
@@ -11,12 +10,9 @@ type ToggleProps = {
 };
 
 const HomeTitles: React.FC = () => {
-  // console.log(process.env.REACT_APP_PUBLIC_URL);
-  // console.log(window.location.origin);
   const [styles] = useContext(StyleHomeContext);
   return (
     <>
-      {/* <DivGlass styles={styles ? true : false}></DivGlass> */}
       <DivContent styles={styles ? true : false}>
         <IconDiv>
           <IconWapDiv>
@@ -27,7 +23,7 @@ const HomeTitles: React.FC = () => {
           <PRWapDiv>
             <PRH3>YOU ONLY LIVE ONCS.</PRH3>
             <PRp>
-              Bookputは、本を読むあなたにOUTPUTし、それを共有する場を提供します。
+              Bookputは、本を読むあなたにOUTPUTし、共有する場を提供します。
               <br />
               本の内容は行動に移してこそ真価を発揮する。本の価値を引き上げます。
               <br />
@@ -51,28 +47,6 @@ const HomeTitles: React.FC = () => {
 };
 export default HomeTitles;
 
-// const DivGlass = styled.div<ToggleProps>`
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 40%;
-//   height: 100%;
-//   backdrop-filter: blur(15px);
-//   z-index: 1;
-//   box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
-//   transition: 0.5s;
-//   transition-delay: 1s;
-//   ${({ styles }) =>
-//     styles
-//       ? css`
-//           width: 100%;
-//           backdrop-filter: blur(15px);
-//           box-shadow: 10px 0 15px rgba(0, 0, 0, 0.5);
-//           transition-delay: 0s;
-//         `
-//       : ""}
-// `;
-
 const DivContent = styled.div<ToggleProps>`
   position: relative;
   display: flex;
@@ -85,6 +59,9 @@ const DivContent = styled.div<ToggleProps>`
   transition: 0.5s;
   transition-delay: 1s;
   top: 8rem;
+  ${sp`
+  flex-direction: column;
+  `}
   ${({ styles }) =>
     styles
       ? css`
@@ -95,15 +72,23 @@ const DivContent = styled.div<ToggleProps>`
         `
       : ""}
 `;
-const IconDiv = styled.div `
-width: 50%;
-height: 100%;
-`
+const IconDiv = styled.div`
+  width: 50%;
+  height: 100%;
+  ${sp`
+  width: 100%;
+  height: 45rem;
+  `}
+`;
 const IconWapDiv = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
   place-items: center;
+  ${sp`
+  width: 90%;
+  margin: 0 auto;
+  `}
 `;
 
 const IconImg = styled.img`
@@ -120,26 +105,54 @@ const IconImg = styled.img`
 const PRDiv = styled.div`
   width: 50%;
   height: 100%;
-
+  ${tab`
+  position: relative;
+  top: 5rem;
+  height: 80%;
+  `}
+  ${sp`
+  position: relative;
+  top: -7rem;
+  width: 100%;
+ 
+  `}
 `;
 
 const PRWapDiv = styled.div`
   width: 95%;
   height: 70%;
   z-index: 1;
+  ${sp`
+   width: 100%;
+`}
 `;
 
 const PRH3 = styled.h3`
   font-size: 2.5rem;
   text-align: left;
   color: #fff;
+  ${tab`
+  font-size: 1.8rem;
+`}
+  ${sp`
+   font-size: 1.4rem;
+    text-align:center;
+  `}
 `;
 
 const PRp = styled.p`
   font-size: 0.9rem;
   text-align: left;
-  line-height: 1.8rem;
+  line-height: 2rem;
   color: #fff;
+  ${tab`
+  font-size: .8rem;
+`}
+  ${sp`
+  font-size: .8rem;
+   line-height: 1.7rem;
+   text-align:center;
+`}
 `;
 
 
