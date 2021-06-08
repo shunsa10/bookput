@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { sp, tab } from "../media";
 
-
-
-const HomeHeader: React.FC = () => {
+const UHheader: React.FC = () => {
   return (
     <Headers>
       <Logo href="#" className="logo">
@@ -16,7 +14,10 @@ const HomeHeader: React.FC = () => {
           <Navli>マイプット</Navli>
         </Link>
         <Link to="Account" style={{ textDecoration: "none" }}>
-          <Navli>ログイン</Navli>
+          <Navli>探す</Navli>
+        </Link>
+        <Link to="./" style={{ textDecoration: "none" }}>
+          <Navli>トップへ</Navli>
         </Link>
         {/* <Navli></Navli> */}
       </NavUl>
@@ -24,19 +25,19 @@ const HomeHeader: React.FC = () => {
   );
 };
 
-export default HomeHeader;
+export default UHheader;
 
 const Headers = styled.header`
-  position: absolute;
   display: flex;
   justify-content: space-between;
-  top: 0;
-  left: 0;
   width: 100%;
   padding: 20px 50px;
-  
+  background-color: #37888175;
   z-index: 10;
   box-sizing: border-box;
+
+  backdrop-filter: blur(15px);
+  z-index: 1;
   ${tab`
   padding: 20px;
 `}
@@ -52,6 +53,7 @@ const Logo = styled.a`
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
   transition: 0.5s;
   z-index: 2;
+
 `;
 
 /////////////////////////////////////////////
