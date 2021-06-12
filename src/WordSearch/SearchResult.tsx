@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react'
+
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import { sp, tab } from "../../media";
+import { sp, tab } from "../media";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { BiBook } from "react-icons/bi";
@@ -15,6 +16,7 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 
+
 const useStyles1 = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -25,49 +27,22 @@ const useStyles1 = makeStyles((theme: Theme) =>
       fontSize: theme.typography.pxToRem(15),
       fontWeight: theme.typography.fontWeightRegular,
       margin: "0 auto",
-     
     },
   })
 );
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      "& > *": {
-        margin: theme.spacing(1),
-        height: "85px",
-        width: "98.5%",
-        color: "#fff",
-        // background: "linear-gradient(45deg, #3f88db 30%, #53e5ff 90%)",
-        background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-        border: 0,
-        borderRadius: 3,
-        boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
-        padding: "0 30px",
-      },
-    },
-  })
-);
+const SearchResult: React.FC = () => {
 
-
-const HostGroup: React.FC = () => {
-    const classes = useStyles();
     const classes1 = useStyles1();
 
     return (
       <>
         <ContentDiv2>
-          <Link to="CreateGroup" style={{ textDecoration: "none" }}>
-            <NewGroupDiv2 className={classes.root}>
-              <Button variant="outlined">新しいグループを作成</Button>
-            </NewGroupDiv2>
-          </Link>
           <GroupDiv2>
             <GroupSTdiv2>
               <Grouptitle2>
                 村上春樹が変えた日本のいくつかのこと、8時からの営業になること
               </Grouptitle2>
-              <GroupStatus2>ホスト</GroupStatus2>
             </GroupSTdiv2>
             <GroupTextDiv2 className={classes1.root}>
               {/* <GroupText2>
@@ -101,6 +76,7 @@ const HostGroup: React.FC = () => {
             <GroupDetails2>
               <GroupDetailsName2>Shun Sato</GroupDetailsName2>
               <GroupDetailsStart2>6.26 20:30からスタート</GroupDetailsStart2>
+              <GroupStatus2>参加する</GroupStatus2>
             </GroupDetails2>
           </GroupDiv2>
           <GroupDiv2>
@@ -108,7 +84,6 @@ const HostGroup: React.FC = () => {
               <Grouptitle2>
                 村上春樹が変えた日本のいくつかのこと、8時からの営業になること
               </Grouptitle2>
-              <GroupStatus2>ホスト</GroupStatus2>
             </GroupSTdiv2>
             <GroupTextDiv2 className={classes1.root}>
               <Accordion>
@@ -137,6 +112,79 @@ const HostGroup: React.FC = () => {
             <GroupDetails2>
               <GroupDetailsName2>Shun Sato</GroupDetailsName2>
               <GroupDetailsStart2>6.26 20:30からスタート</GroupDetailsStart2>
+              <GroupStatus2>参加する</GroupStatus2>
+            </GroupDetails2>
+          </GroupDiv2>
+          <GroupDiv2>
+            <GroupSTdiv2>
+              <Grouptitle2>
+                村上春樹が変えた日本のいくつかのこと、8時からの営業になること
+              </Grouptitle2>
+            </GroupSTdiv2>
+            <GroupTextDiv2 className={classes1.root}>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography className={classes1.heading}>
+                    グループの内容
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse malesuada lacus ex, sit amet blandit leo
+                    lobortis eget. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+                    blandit leo lobortis eget. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+                    sit amet blandit leo lobortis eget.
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            </GroupTextDiv2>
+            <GroupDetails2>
+              <GroupDetailsName2>Shun Sato</GroupDetailsName2>
+              <GroupDetailsStart2>6.26 20:30からスタート</GroupDetailsStart2>
+              <GroupStatus2>参加する</GroupStatus2>
+            </GroupDetails2>
+          </GroupDiv2>
+          <GroupDiv2>
+            <GroupSTdiv2>
+              <Grouptitle2>
+                村上春樹が変えた日本のいくつかのこと、8時からの営業になること
+              </Grouptitle2>
+            </GroupSTdiv2>
+            <GroupTextDiv2 className={classes1.root}>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography className={classes1.heading}>
+                    グループの内容
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse malesuada lacus ex, sit amet blandit leo
+                    lobortis eget. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+                    blandit leo lobortis eget. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+                    sit amet blandit leo lobortis eget.
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            </GroupTextDiv2>
+            <GroupDetails2>
+              <GroupDetailsName2>Shun Sato</GroupDetailsName2>
+              <GroupDetailsStart2>6.26 20:30からスタート</GroupDetailsStart2>
+              <GroupStatus2>参加する</GroupStatus2>
             </GroupDetails2>
           </GroupDiv2>
           <MenuWapDiv>
@@ -161,8 +209,10 @@ const HostGroup: React.FC = () => {
         </ContentDiv2>
       </>
     );
-};
-export default HostGroup;
+}
+
+export default SearchResult;
+
 
 const ContentDiv2 = styled.div`
   width: 70%;
@@ -176,13 +226,6 @@ width: 90%;
 `}
 `;
 
-const NewGroupDiv2 = styled.div`
-  width: 90%;
-  height: 100px;
-  margin: 0 auto;
-  margin-top: 30px;  
-`;
-
 const GroupDiv2 = styled.div`
   width: 90%;
   height: 200px;
@@ -192,10 +235,10 @@ const GroupDiv2 = styled.div`
   margin: 0 auto;
   margin-top: 30px;
   ${tab`
- height: 230px;
+ height: 200px;
 `}
   ${sp`
-height: 280px;
+height: 230px;
 `}
 `;
 /////////////////////////////////////
@@ -223,7 +266,7 @@ font-weight: 600;
 `}
 `;
 const GroupStatus2 = styled.div`
-  margin-top: 1rem;
+  margin-top: 0.7rem;
   margin-left: 5%;
   margin-right: 5px;
   color: #fff;
@@ -234,22 +277,19 @@ const GroupStatus2 = styled.div`
   background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
   height: 1.3rem;
   font-size: 0.9rem;
-  width: 4rem;
+  width: 7rem;
   ${tab`
-width: 3rem;
-
+width: 5rem;
 
 `}
   ${sp`
 width: 3rem;
+font-size: 0.7rem;
 `}
 `;
 ////////////////////////////////////
 
-const GroupTextDiv2 = styled.div`
-
-
-`
+const GroupTextDiv2 = styled.div``;
 
 //////////////////////////////////
 
@@ -266,12 +306,15 @@ const GroupDetails2 = styled.div`
 `;
 
 const GroupDetailsName2 = styled.p`
-color: gray;
+  color: gray;
 `;
 
 const GroupDetailsStart2 = styled.p`
   margin-left: 5%;
   color: gray;
+  ${sp`
+ margin-left: 3%;
+`}
 `;
 
 ///////////////////////////////////////
@@ -307,11 +350,10 @@ width: 300px;
 width: 250px;
 `}
 `;
-const MenuIcon1 = styled.div `
-width: 33%;
-margin-top: 5px;
-
-`
+const MenuIcon1 = styled.div`
+  width: 33%;
+  margin-top: 5px;
+`;
 const MenuIcon2 = styled.div`
   width: 33%;
   margin-top: 5px;

@@ -61,13 +61,19 @@ const JoinGroup: React.FC = () => {
         <MenuWapDiv>
           <MenuDiv>
             <MenuIcon1>
-              <BiBook size={30} color="#fff" />
+              <Link to="SimpleSearch" style={{ textDecoration: "none" }}>
+                <BiBook size={30} color="#fff" />
+              </Link>
             </MenuIcon1>
             <MenuIcon2>
-              <BiZoomIn size={30} color="#fff" />
+              <Link to="WordSearch" style={{ textDecoration: "none" }}>
+                <BiZoomIn size={30} color="#fff" />
+              </Link>
             </MenuIcon2>
             <MenuIcon3>
-              <BiHomeAlt size={30} color="#fff" />
+              <Link to="UserHome" style={{ textDecoration: "none" }}>
+                <BiHomeAlt size={30} color="#fff" />
+              </Link>
             </MenuIcon3>
           </MenuDiv>
         </MenuWapDiv>

@@ -1,5 +1,5 @@
-
 import React from "react";
+import Paper from "@material-ui/core/Paper";
 import { makeStyles, Theme, useTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
@@ -7,9 +7,14 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import styled from "styled-components";
-import HostGroup from './TabContents/HostGroup'
-import JoinGroup from './TabContents/JoinGroup'
-import PastGroup from './TabContents/PastGroup'
+import CakeIcon from "@material-ui/icons/Cake";
+import LaptopMacIcon from "@material-ui/icons/LaptopMac";
+import WbIncandescentIcon from "@material-ui/icons/WbIncandescent";
+import HomeIcon from "@material-ui/icons/Home";
+import BusinessSearch from "./SearchContent/BusinessSearch ";
+import CuisineSearch from "./SearchContent/CuisineSearch";
+import LifeSearch from "./SearchContent/LifeSearch";
+import PracticalSearch from "./SearchContent/PracticalSearch";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -46,53 +51,64 @@ function a11yProps(index: any) {
   };
 }
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles1 = makeStyles((theme: Theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     width: 500,
   },
 }));
 
-export default function UhTab() {
+const useStyles = makeStyles({
+  root: {
+    flexGrow: 1,
+   
+  },
+});
+
+export default function SearchTab() {
   const classes = useStyles();
-  const theme = useTheme();
+  const classes1 = useStyles1();
+   const theme = useTheme();
   const [value, setValue] = React.useState(0);
+
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
   };
 
-//   const handleChangeIndex = (index: number) => {
-//     setValue(index);
-//   };
-
   return (
-    <TabDiv className={classes.root} style={{ width: "100%" }}>
-      <AppBar position="static" color="default" style={{ width: "100%" }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          indicatorColor="primary"
-          textColor="primary"
-          variant="fullWidth"
-          aria-label="full width tabs example"
-          style={{ padding: "0" }}
-        >
-          <Tab label="MY Group" style={{ padding: "0" }} {...a11yProps(0)} />
-          <Tab label="Join Group" style={{ padding: "0" }} {...a11yProps(1)} />
-          <Tab label="past　group" style={{ padding: "0" }} {...a11yProps(2)} />
-        </Tabs>
-      </AppBar>
-      <TabPanel value={value} index={0} dir={theme.direction}>
-        <HostGroup />
+    <>
+    <Paper square className={classes.root}>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        variant="fullWidth"
+        indicatorColor="secondary"
+        textColor="secondary"
+        aria-label="icon label tabs example"
+      >
+        <Tab icon={<LaptopMacIcon />} {...a11yProps(0)} label="ビジネス" />
+        <Tab icon={<HomeIcon />} {...a11yProps(1)} label="生活" />
+        <Tab icon={<CakeIcon />} {...a11yProps(2)} label="料理" />
+        <Tab icon={<WbIncandescentIcon />} {...a11yProps(3)} label="実用書" />
+      </Tabs>
+    </Paper>
+    <TabPanel value={value} index={0} dir={theme.direction}>
+        <BusinessSearch />
       </TabPanel>
       <TabPanel value={value} index={1} dir={theme.direction}>
-        <JoinGroup />
+       <CuisineSearch />
       </TabPanel>
       <TabPanel value={value} index={2} dir={theme.direction}>
-        <PastGroup />
+       <LifeSearch />
       </TabPanel>
-    </TabDiv>
+      <TabPanel value={value} index={3} dir={theme.direction}>
+       <PracticalSearch />
+      </TabPanel>
+      </>
   );
-}
+};
+
+
 const TabDiv = styled.div`
 `;
+

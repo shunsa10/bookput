@@ -5,6 +5,9 @@ import Account from './Account/Account'
 import UserHome from './UserHome/UserHomeMain'
 import CreateGroup from "./CreateGroup/CreateGroupMain";
 import JoinGroup from "./JoinGroup/JoinGroupMain";
+import ChatPage from "./ChatPage/ChatPageMain";
+import WordSearch from "./WordSearch/WordSearchMain";
+import SimpleSearch from "./SimpleSearch/SimpleSearchMain";
 import { AccountProvider } from "./Context/AccountContext";
 
 const App:React.FC = () => {
@@ -35,6 +38,21 @@ const App:React.FC = () => {
             <Switch>
               <Route exact path="/JoinGroup" component={JoinGroup}>
                 <JoinGroup />
+              </Route>
+            </Switch>
+            <Switch>
+              <Route exact path="/ChatPage" component={ChatPage}>
+                <ChatPage />
+              </Route>
+            </Switch>
+            <Switch>
+              <Route exact path="/WordSearch" component={WordSearch}>
+                <WordSearch />
+              </Route>
+            </Switch>
+            <Switch>
+              <Route exact path="/SimpleSearch" component={SimpleSearch}>
+                <SimpleSearch />
               </Route>
             </Switch>
           </BrowserRouter>
