@@ -8,47 +8,71 @@ import { BiBook } from "react-icons/bi";
 import { BiZoomIn } from "react-icons/bi";
 import { BiHomeAlt } from "react-icons/bi";
 
-const useStyles = makeStyles((theme: Theme) =>
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+import Typography from "@material-ui/core/Typography";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+
+
+
+const useStyles1 = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      "& > *": {
-        margin: theme.spacing(1),
-        height: "85px",
-        width: "98.5%",
-        color: "#fff",
-        background: "linear-gradient(45deg, #50c2a6 30%, #3aee34 90%)",
-        // background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-        border: 0,
-        borderRadius: 3,
-        boxShadow: "0 3px 5px 2px #6eff694c",
-        padding: "0 30px",
-      },
+      width: "90%",
+      margin: "0 auto",
+    },
+    heading: {
+      fontSize: theme.typography.pxToRem(15),
+      fontWeight: theme.typography.fontWeightRegular,
+      margin: "0 auto",
     },
   })
 );
 
 const PastGroup: React.FC = () => {
-  const classes = useStyles();
+ 
+   const classes1 = useStyles1();
 
   return (
     <>
       <ContentDiv3>
-        <NewGroupDiv3 className={classes.root}>
-          {/* <CreateNewGroup>新しいグループを作成</CreateNewGroup> */}
-          <Button variant="outlined">新しいグループを作成</Button>
-        </NewGroupDiv3>
         <GroupDiv3>
           <GroupSTdiv3>
-            <Grouptitle3>
-              村上春樹が変えた日本のいくつかのこと、8時からの営業になること
-            </Grouptitle3>
+            <Link
+              to="ChatPage"
+              style={{ textDecoration: "none", color: "#555" }}
+            >
+              <Grouptitle3>
+                村上春樹が変えた日本のいくつかのこと、8時からの営業になること
+              </Grouptitle3>
+            </Link>
             <GroupStatus3>終了</GroupStatus3>
           </GroupSTdiv3>
           <GroupTextDiv3>
-            <GroupText3>
-              村上春樹が日本人にあたえた影響って色々あると思うんですね。
-              ①日本人の文体が変わった
-              これは以前にも書きましたが、本当に「がらっ」と変わりま
+            <GroupText3 className={classes1.root}>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography className={classes1.heading}>
+                    グループの内容
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse malesuada lacus ex, sit amet blandit leo
+                    lobortis eget. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+                    blandit leo lobortis eget. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+                    sit amet blandit leo lobortis eget.
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
             </GroupText3>
           </GroupTextDiv3>
           <GroupDetails3>
@@ -93,12 +117,6 @@ width: 90%;
 `}
 `;
 
-const NewGroupDiv3 = styled.div`
-  width: 90%;
-  height: 100px;
-  margin: 0 auto;
-  margin-top: 30px;
-`;
 
 const GroupDiv3 = styled.div`
   width: 90%;
@@ -109,10 +127,10 @@ const GroupDiv3 = styled.div`
   margin: 0 auto;
   margin-top: 30px;
   ${tab`
- height: 280px;
+ height: 230px;
 `}
   ${sp`
-height: 300px;
+height: 280px;
 `}
 `;
 /////////////////////////////////////

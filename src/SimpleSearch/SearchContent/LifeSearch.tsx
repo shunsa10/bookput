@@ -68,81 +68,12 @@ const LifeSearch: React.FC = () => {
           <GroupDetails2>
             <GroupDetailsName2>Shun Sato</GroupDetailsName2>
             <GroupDetailsStart2>6.26 20:30からスタート</GroupDetailsStart2>
-            <GroupStatus2>参加する</GroupStatus2>
+            <Link to="JoinGroup" style={{ textDecoration: "none" }}>
+              <GroupStatus2>参加する</GroupStatus2>
+            </Link>
           </GroupDetails2>
         </GroupDiv2>
-        <GroupDiv2>
-          <GroupSTdiv2>
-            <Grouptitle2>
-              村上春樹が変えた日本のいくつかのこと、8時からの営業になること
-            </Grouptitle2>
-          </GroupSTdiv2>
-          <GroupTextDiv2 className={classes1.root}>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography className={classes1.heading}>
-                  グループの内容
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                  eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                  eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                  eget.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          </GroupTextDiv2>
-          <GroupDetails2>
-            <GroupDetailsName2>Shun Sato</GroupDetailsName2>
-            <GroupDetailsStart2>6.26 20:30からスタート</GroupDetailsStart2>
-            <GroupStatus2>参加する</GroupStatus2>
-          </GroupDetails2>
-        </GroupDiv2>
-        <GroupDiv2>
-          <GroupSTdiv2>
-            <Grouptitle2>
-              村上春樹が変えた日本のいくつかのこと、8時からの営業になること
-            </Grouptitle2>
-          </GroupSTdiv2>
-          <GroupTextDiv2 className={classes1.root}>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography className={classes1.heading}>
-                  グループの内容
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                  eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                  eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                  eget.
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-          </GroupTextDiv2>
-          <GroupDetails2>
-            <GroupDetailsName2>Shun Sato</GroupDetailsName2>
-            <GroupDetailsStart2>6.26 20:30からスタート</GroupDetailsStart2>
-            <GroupStatus2>参加する</GroupStatus2>
-          </GroupDetails2>
-        </GroupDiv2>
+       
         <MenuWapDiv>
           <MenuDiv>
             <MenuIcon1>

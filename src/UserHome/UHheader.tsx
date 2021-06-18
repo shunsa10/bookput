@@ -13,7 +13,7 @@ const UHheader: React.FC = () => {
         <Link to="UserHome" style={{ textDecoration: "none" }}>
           <Navli>マイプット</Navli>
         </Link>
-        <Link to="Account" style={{ textDecoration: "none" }}>
+        <Link to="SimpleSearch" style={{ textDecoration: "none" }}>
           <Navli>探す</Navli>
         </Link>
         <Link to="./" style={{ textDecoration: "none" }}>

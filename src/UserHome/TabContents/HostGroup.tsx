@@ -64,50 +64,14 @@ const HostGroup: React.FC = () => {
           </Link>
           <GroupDiv2>
             <GroupSTdiv2>
-              <Grouptitle2>
-                村上春樹が変えた日本のいくつかのこと、8時からの営業になること
-              </Grouptitle2>
-              <GroupStatus2>ホスト</GroupStatus2>
-            </GroupSTdiv2>
-            <GroupTextDiv2 className={classes1.root}>
-              {/* <GroupText2>
-                村上春樹が日本人にあたえた影響って色々あると思うんですね。
-                ①日本人の文体が変わった
-                これは以前にも書きましたが、本当に「がらっ」と変わりま
-              </GroupText2> */}
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls="panel1a-content"
-                  id="panel1a-header"
-                >
-                  <Typography className={classes1.heading}>
-                    グループの内容
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse malesuada lacus ex, sit amet blandit leo
-                    lobortis eget. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Suspendisse malesuada lacus ex, sit amet
-                    blandit leo lobortis eget. Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                    sit amet blandit leo lobortis eget.
-                  </Typography>
-                </AccordionDetails>
-              </Accordion>
-            </GroupTextDiv2>
-            <GroupDetails2>
-              <GroupDetailsName2>Shun Sato</GroupDetailsName2>
-              <GroupDetailsStart2>6.26 20:30からスタート</GroupDetailsStart2>
-            </GroupDetails2>
-          </GroupDiv2>
-          <GroupDiv2>
-            <GroupSTdiv2>
-              <Grouptitle2>
-                村上春樹が変えた日本のいくつかのこと、8時からの営業になること
-              </Grouptitle2>
+              <Link
+                to="ChatPage"
+                style={{ textDecoration: "none", color: "#555" }}
+              >
+                <Grouptitle2>
+                  村上春樹が変えた日本のいくつかのこと、8時からの営業になること
+                </Grouptitle2>
+              </Link>
               <GroupStatus2>ホスト</GroupStatus2>
             </GroupSTdiv2>
             <GroupTextDiv2 className={classes1.root}>
@@ -139,6 +103,7 @@ const HostGroup: React.FC = () => {
               <GroupDetailsStart2>6.26 20:30からスタート</GroupDetailsStart2>
             </GroupDetails2>
           </GroupDiv2>
+          
           <MenuWapDiv>
             <MenuDiv>
               <MenuIcon1>

@@ -8,6 +8,29 @@ import { BiBook } from "react-icons/bi";
 import { BiZoomIn } from "react-icons/bi";
 import { BiHomeAlt } from "react-icons/bi";
 
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+import Typography from "@material-ui/core/Typography";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+
+
+const useStyles1 = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      width: "90%",
+      margin: "0 auto",
+    },
+    heading: {
+      fontSize: theme.typography.pxToRem(15),
+      fontWeight: theme.typography.fontWeightRegular,
+      margin: "0 auto",
+    },
+  })
+);
+
+
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -29,27 +52,52 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const JoinGroup: React.FC = () => {
   const classes = useStyles();
+  const classes1 = useStyles1();
 
   return (
     <>
       <ContentDiv1>
-        <Link to="JoinGroup" style={{ textDecoration: "none" }}>
+        <Link to="SimpleSearch" style={{ textDecoration: "none" }}>
           <NewGroupDiv1 className={classes.root}>
             <Button variant="outlined">新しくグループを探す</Button>
           </NewGroupDiv1>
         </Link>
         <GroupDiv1>
           <GroupSTdiv1>
-            <Grouptitle1>
-              村上春樹が変えた日本のいくつかのこと、8時からの営業になること
-            </Grouptitle1>
+            <Link
+              to="ChatPage"
+              style={{ textDecoration: "none", color: "#555" }}
+            >
+              <Grouptitle1>
+                村上春樹が変えた日本のいくつかのこと、8時からの営業になること
+              </Grouptitle1>
+            </Link>
             <GroupStatus1>参加</GroupStatus1>
           </GroupSTdiv1>
           <GroupTextDiv1>
-            <GroupText1>
-              村上春樹が日本人にあたえた影響って色々あると思うんですね。
-              ①日本人の文体が変わった
-              これは以前にも書きましたが、本当に「がらっ」と変わりま
+            <GroupText1 className={classes1.root}>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography className={classes1.heading}>
+                    グループの内容
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Suspendisse malesuada lacus ex, sit amet blandit leo
+                    lobortis eget. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Suspendisse malesuada lacus ex, sit amet
+                    blandit leo lobortis eget. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+                    sit amet blandit leo lobortis eget.
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
             </GroupText1>
           </GroupTextDiv1>
           <GroupDetails1>
@@ -111,10 +159,10 @@ const GroupDiv1 = styled.div`
   margin: 0 auto;
   margin-top: 30px;
   ${tab`
- height: 280px;
+ height: 230px;
 `}
   ${sp`
-height: 300px;
+height: 280px;
 `}
 `;
 /////////////////////////////////////
